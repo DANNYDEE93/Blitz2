@@ -14,16 +14,16 @@ _________________________
 
 ### Steps Taken: 
 Before the QA's test, I had to change the nginx config file to allow greater requests to my server, add import logging into my configuration file, and download stress ng to allow my ip address to be accessed by the QA:
+
+![nginx.conf](https://github.com/DANNYDEE93/Blitz2/blob/main/nginfile.png)
+
 * worker processes = 8
 * worker connections = 2000
 * allow multi accept for requests
 * gzip setting on [level 6 requires a greater amount of CPU processing power which is why a greater instance type is necessary to ensure my server can handle 14000 requests]
-         gzip_vary on;
-         gzip_proxied any;
-         gzip_comp_level 6;
-         gzip_buffers 16 8k;
-         gzip_http_version 1.1;
-         gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/>
+
+![gzipsettings](https://github.com/DANNYDEE93/Blitz2/blob/main/nginxfile1.png)
+
 * Added import logging to application.py file code
 * the configuration below allows my server to create a log report along with a file name, logging format, and log level.
 [all logs will be written to a app.log file]
@@ -56,8 +56,7 @@ In order to fix this,
 After retesting my server, 
 
 
-![Before & After CDN](https://github.com/DANNYDEE93/Blitz1/blob/main/Blitz1Diagram.jpg)
-
+![systemdiagram](https://github.com/DANNYDEE93/Blitz2/blob/main/blitz2.jpg)
 
 
 
