@@ -31,12 +31,17 @@ Before the QA's test, I had to change the nginx config file to allow greater req
 [simple log level]
 * import logging
 logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
-* download stress ng 
-* run command: sudo nice -n -20 stress-ng --cpu 2 & [this allows testing the performance of my server under load by simulating max CPU utilization. The "&" runs the command in the background so the terminal remains usable]
+
+![logging](https://github.com/DANNYDEE93/Blitz2/blob/main/importlogging.png)
+
+* download stress ng before running script
+
+![stressng](https://github.com/DANNYDEE93/Blitz2/blob/main/stresscommand.png)
+
+* run command in separate blitz.sh file: sudo nice -n -20 stress-ng --cpu 2 & [this allows testing the performance of my server under load by simulating max CPU utilization. The "&" runs the command in the background so the terminal remains usable]
 * gave my IP:address & port to QA
 
 *  QA sent 14000 requests & 3 users were not able to reach my URL shortener.
-
 
 ### Resolving Server User Access 
 
