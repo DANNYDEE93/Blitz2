@@ -63,6 +63,6 @@ After retesting my server on a t3.xlarge instance type, I recieved no errors so 
 
 
 
-![systemdiagram](https://github.com/DANNYDEE93/Blitz2/blob/main/blitz2.jpg)
+![systemdiagram](https://github.com/DANNYDEE93/Blitz2/blob/main/newblitz2.jpg)
 
 
