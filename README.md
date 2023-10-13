@@ -51,19 +51,18 @@ ______________________________________
 All of the changes in this test created a greater you need for more CPU utilization]
 
 *  Cd into **/var/log/nginx/error.log**:
-2023/10/10 20:24:42 [error] 501#501: *1 connect() failed (111: Unknown error) while connecting to upstream, client: 167.94.145.53, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "3.83.232.97:5000"
-
-This error message shows that the the ip address that tried to access my server sent a GET request but it could not access the host ip address because of the upstream ip address on port 8000.
+2023/10/10 20:24:42 [error] 501#501: *1 connect() failed (111: Unknown error) while connecting to upstream, client: 167.94.145.53, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "3.83.232.97:5000" [You can disregard this message because it was just due to the fact that the instance was turned off at the time of the QA's retest. Since my instance environment and size type was more stable, I it was still able to handle the volume load of 14,000 requests. ]
 
 * Go to instance on AWS console --> **Actions** --> **Instance Settings** --> **Change instance type**
 * Increased capacity of instance type to t3.xlarge to strengthen my server to handle the entire 14,000 GET requests sent to my web application
 * 	Compared to the t2.medium instance type, it allows for greater CPU and memory to handle a greater workload, greater network bandwidth with 5 Gbps, and faster disk storage to allow the server to process faster responses at a greater capacity.
 * 	Compared to a larger instance such as a m6g.medium which allows for 10 gbps of network bandwidth and greater processing, I may be in 	danger of wasting resources. It is important to know when to scale as needed.
 
+
+After retesting my server on a t3.xlarge instance type, I recieved no errors so all 14,000 GET requests were able to reach my server from the QA's server.
+
+
+
 ![systemdiagram](https://github.com/DANNYDEE93/Blitz2/blob/main/blitz2.jpg)
-
-
-After retesting my server on a t3.xlarge instance type,
-
 
 
